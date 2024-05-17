@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Ice Cream</title>
+</head>
+
+<body>
+  <h1>Update Ice Cream</h1>
+  <form action="{{ url_for('ice_cream.edit_ice_cream', ice_cream_id=ice_cream.id) }}" method="POST">
+    <!-- Change the method to PUT -->
+    <input type="hidden" name="_method" value="PUT">
+    <label for="flavor">Flavor:</label>
+    <input type="text" id="flavor" name="flavor" value="{{ ice_cream.flavor }}"><br>
+    <label for="category">Category:</label>
+    <input type="text" id="category" name="category" value="{{ ice_cream.category }}"><br>
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" value="{{ ice_cream.price }}"><br>
+    <label for="stock_quantity">Stock Quantity:</label>
+    <input type="number" id="stock_quantity" name="stock_quantity" value="{{ ice_cream.stock_quantity }}"><br>
+    <button type="submit">Update</button>
+  </form>
+</body>
+
+</html>

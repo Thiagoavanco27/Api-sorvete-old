@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ice Cream Details</title>
+</head>
+
+<body>
+  <h1>Ice Cream Details</h1>
+  <p><strong>ID:</strong> {{ ice_cream.id }}</p>
+  <p><strong>Flavor:</strong> {{ ice_cream.flavor }}</p>
+  <p><strong>Category:</strong> {{ ice_cream.category }}</p>
+  <p><strong>Price:</strong> {{ ice_cream.price }}</p>
+  <p><strong>Stock Quantity:</strong> {{ ice_cream.stock_quantity }}</p>
+
+  <form id="delete-form" action="{{ url_for('ice_cream.remove_ice_cream', ice_cream_id=ice_cream.id) }}" method="POST">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit">Delete Ice Cream</button>
+  </form>
+  <a href="{{ url_for('ice_cream.get_ice_creams') }}">Back to Ice Cream List</a>
+</body>
+
+</html>

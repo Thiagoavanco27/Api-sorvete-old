@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ice Cream List</title>
+</head>
+
+<body>
+  <h1>Ice Cream List</h1>
+  <ul>
+    {% for ice_cream in ice_creams %}
+    <li><a href="{{ url_for('ice_cream.get_ice_cream', ice_cream_id=ice_cream.id) }}">{{ ice_cream.flavor }} (ID: {{ ice_cream.id }})</a></li>
+    {% endfor %}
+  </ul>
+</body>
+
+</html>
